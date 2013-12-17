@@ -1,0 +1,9 @@
+.installed.cfg
+var/*
+bin
+develop-eggs
+*.egg-info
+include
+lib
+parts
+settings.ini
