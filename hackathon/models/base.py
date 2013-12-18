@@ -21,7 +21,7 @@ class AbstractBase:
 
     __acl__ = (Allow, ADMIN, ALL_PERMISSIONS)
 
-    id = Column(types.Integer(primary_key=True))
+    id = Column(types.Integer, primary_key=True)
     created = Column(types.DateTime(timezone=True),
                      default=datetime.datetime.now(tz=pytz.UTC))
     modified = Column(types.DateTime(timezone=True),
