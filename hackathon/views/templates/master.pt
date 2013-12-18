@@ -1,0 +1,12 @@
+<!doctype>
+<html>
+<head>
+<title>${title|string:Hackathon}</title>
+</head>
+<body>
+<h1>${title|string:Hackathon}</h1>
+<div id="content">
+  <metal:content define-slot="content" />
+</div>
+</body>
+</html>

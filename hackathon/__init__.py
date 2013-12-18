@@ -3,6 +3,7 @@ from pyramid_beaker import session_factory_from_settings
 from sqlalchemy import engine_from_config
 
 from hackathon.models import initialize_sql
+from hackathon.routes import configure_routes
 
 
 def main(global_config, **settings):
@@ -14,6 +15,7 @@ def main(global_config, **settings):
     session_factory = session_factory_from_settings(settings)
     config.set_session_factory(session_factory)
 
+    configure_routes(config)
     config.scan('hackathon.views')
     engine = engine_from_config(settings, 'sqlalchemy.')
     initialize_sql(engine)
