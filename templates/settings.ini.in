@@ -1,5 +1,5 @@
 [app:hackathon]
-use = egg:hackathon
+use = egg:hackathon#main
 reload_templates = ${buildout:debug}
 debug_authorization = false
 debug_notfound = false
@@ -7,28 +7,14 @@ debug_routematch = false
 debug_templates = false
 default_locale_name = en
 
-[filter:weberror]
-use = egg:WebError#error_catcher
-debug = false
-;error_log =
-;show_exceptions_in_wsgi_errors = true
-;smtp_server = localhost
-;error_email = janitor@example.com
-;smtp_username = janitor
-;smtp_password = "janitor's password"
-;from_address = paste@localhost
-;error_subject_prefix = "Pyramid Error"
-;smtp_use_tls =
-;error_message =
 
 [pipeline:main]
 pipeline =
-    weberror
     tm
     hackathon
 
 [server:main]
-use = egg:gunicorn#http
+use = egg:gunicorn#main
 host = ${settings:host}
 port = ${settings:port}
 
