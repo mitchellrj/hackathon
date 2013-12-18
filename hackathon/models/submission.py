@@ -23,6 +23,8 @@ def file_identifier(data):
 
 class Submission(Base):
 
+    __tablename__ = 'submissions'
+
     @property
     def __acl__(self):
         return self.entry.__acl__

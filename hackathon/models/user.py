@@ -18,6 +18,8 @@ from hackathon.security.principals import user
 
 class User(Base):
 
+    __tablename__ = 'users'
+
     @property
     def __acl__(self):
         return Base.__acl__ + [

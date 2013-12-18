@@ -17,6 +17,8 @@ from hackathon.models.hackathon import Hackathon
 
 class Task(Base):
 
+    __tablename__ = 'tasks'
+
     hackathon_id = Column(types.Integer, ForeignKey(Hackathon.id))
     name = Column(types.Unicode)
 

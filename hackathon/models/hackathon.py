@@ -13,6 +13,8 @@ from hackathon.models.base import Base
 
 class Hackathon(Base):
 
+    __tablename__ = 'hackathons'
+
     name = Column(types.Unicode)
     start = Column(types.DateTime)
     end = Column(types.DateTime)

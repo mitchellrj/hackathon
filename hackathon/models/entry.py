@@ -30,6 +30,8 @@ entry_tasks = Table(
 
 class Entry(Base):
 
+    __tablename__ = 'entries'
+
     @property
     def __acl__(self):
         return Base.__acl__ + [
