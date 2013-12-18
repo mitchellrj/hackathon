@@ -7,6 +7,12 @@ debug_routematch = false
 debug_templates = false
 default_locale_name = en
 
+session.type = file
+session.data_dir = %(here)s/var/sessions/data
+session.lock_dir = %(here)s/var/sessions/lock
+session.key = mykey
+session.secret = mysecret
+session.cookie_on_exception = true
 sqlalchemy.url = sqlite:///var/hackathon.sqlite
 
 [pipeline:main]
