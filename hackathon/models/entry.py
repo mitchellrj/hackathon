@@ -23,7 +23,7 @@ from hackathon.security.principals import user
 entry_tasks = Table(
     'entry_tasks',
     Base.metadata,
-    Column('entry_id', types.Integer, ForeignKey('Entry.id')),
+    Column('entry_id', types.Integer, ForeignKey('entries.id')),
     Column('task_id', types.Integer, ForeignKey(Task.id)),
     )
 
