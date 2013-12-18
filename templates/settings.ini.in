@@ -15,6 +15,8 @@ session.secret = mysecret
 session.cookie_on_exception = true
 sqlalchemy.url = sqlite:///var/hackathon.sqlite
 
+fss.directory = var
+
 [pipeline:main]
 pipeline =
     hackathon
