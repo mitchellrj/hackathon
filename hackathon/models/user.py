@@ -10,7 +10,7 @@ from pyramid.security import Allow
 from pyramid.security import ALL_PERMISSIONS
 from sqlalchemy import Column
 from sqlalchemy import types
-from sqlalchemy.ext.declarative import synonym_for
+from sqlalchemy.orm import synonym
 
 from hackathon.models.base import Base
 from hackathon.security.principals import user
@@ -28,20 +28,20 @@ class User(Base):
 
     name = Column(types.Unicode)
     email = Column(types.Unicode)
-    _password = Column(type.String, name='password')
+    _password = Column(types.String, name='password')
 
-    @synonym_for('_password')
-    @property
-    def password(self):
+    def _get_password(self):
         return ''
 
-    @password.setter
-    def password(self, value):
+    def _set_password(self, value):
         # salt=None defaults to a random salt
         # iterations=None defaults to 400
         self._password = pbkdf2.crypt(value,
                                       salt=None,
                                       iterations=None)
+
+    password = synonym('_password',
+                       descriptor=property(_get_password, _set_password))
 
     def authenticate(self, password):
         # Passing the existing password as the salt gets the salt &
