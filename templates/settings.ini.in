@@ -11,7 +11,6 @@ sqlalchemy.url = sqlite:///var/hackathon.sqlite
 
 [pipeline:main]
 pipeline =
-    tm
     hackathon
 
 [server:main]
