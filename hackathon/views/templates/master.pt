@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>${title|string:Hackathon}</title>
+<metal:head define-slot="head" />
 </head>
 <body>
 <h1>${title|string:Hackathon}</h1>
