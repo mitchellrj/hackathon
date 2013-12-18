@@ -8,6 +8,7 @@ requires = [
     'deform',
     'pbkdf2',
     'pyramid',
+    'pyramid_beaker',
     'pytz',
     'SQLAlchemy',
     'pyramid_tm',
